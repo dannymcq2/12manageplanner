@@ -28,7 +28,7 @@ Creating Tables with JSON in PostgreSQL
 
 PostgreSQL supports JSON data types natively. You can create tables with JSON columns and use various functions to work with JSON data.
 
-Create a table with JSONB column:
+Create a table with JSON column:
 
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
