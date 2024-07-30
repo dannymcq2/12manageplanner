@@ -80,9 +80,7 @@ Here is the `package.json` configuration for this project:
 
 Usage
 
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+For more details, refer to this [video](https://drive.google.com/file/d/1AdkT4f2UlrUbu-dmrC9eXakPhR067qNU/view).
 
 Features
 
