@@ -50,7 +50,7 @@ Here is the `package.json` configuration for this project:
 
 Usage
 
-For more details, refer to this [video](https://drive.google.com/file/d/1AdkT4f2UlrUbu-dmrC9eXakPhR067qNU/view).
+For more details, refer to this [video](https://drive.google.com/file/d/1AdkT4f2UlrUbu-dmrC9eXakPhR067qNU/view)
 
 Features
 
