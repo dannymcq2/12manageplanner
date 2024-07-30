@@ -1,79 +1,23 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+ ## Description My motivation was to create an organizer or planner to view and add departments, roles, and percentage of employees. I built this for managers of all kinds looking for a robust organizing tool. This project solves the problem of sloppy work and poor organization. Additionally, I learned more about using PostgreSQL during this project. ## Table of Contents - Installation - Package JSON - Usage - Features - Tests - Credits - License ## Installation To work with JSON data in SQL, you need to ensure you have the appropriate tools and packages installed. Below are instructions for a few common SQL environments: ### PostgreSQL PostgreSQL has built-in support for JSON. If you are using PostgreSQL, you don’t need to install anything additional to handle JSON data. ### MySQL MySQL also supports JSON data types natively. Ensure you are using MySQL version 5.7.8 or higher. ### Creating Tables with JSON in PostgreSQL PostgreSQL supports JSON data types natively. You can create tables with JSON columns and use various functions to work with JSON data. sql CREATE TABLE users ( id SERIAL PRIMARY KEY, data JSONB ); INSERT INTO users (data) VALUES ('{"name": "John", "age": 30}');  ## Package JSON Here is the package.json configuration for this project: json { "name": "02-challenge", "version": "1.0.0", "description": "## Your Task", "main": "index.js", "scripts": { "test": "echo \"Error: no test specified\" && exit 1" }, "keywords": [], "author": "", "license": "ISC", "dependencies": { "inquirer": "^8.2.4", "pg": "^8.12.0" }, "devDependencies": {} }  ## package.json
 
-const shapeChoices = ['circle', 'triangle', 'square'];
+Here is the `package.json` configuration for this project:
 
-const questions = [
-    {
-        type: 'input',
-        name: 'text',
-        message: 'Enter text (up to 3 characters):',
-        validate: function(value) {
-            if (value.length <= 3) return true;
-            return 'Please enter up to 3 characters.';
-        }
-    },
-    {
-        type: 'input',
-        name: 'textColor',
-        message: 'Enter text color (color keyword or hexadecimal number):',
-        validate: function(value) {
-            if (/^#[0-9A-F]{6}$/i.test(value) || /^[a-zA-Z]+$/.test(value)) return true;
-            return 'Please enter a valid color keyword or hexadecimal number.';
-        }
-    },
-    {
-        type: 'list',
-        name: 'shape',
-        message: 'Choose a shape:',
-        choices: shapeChoices
-    },
-    {
-        type: 'input',
-        name: 'shapeColor',
-        message: 'Enter shape color (color keyword or hexadecimal number):',
-        validate: function(value) {
-            if (/^#[0-9A-F]{6}$/i.test(value) || /^[a-zA-Z]+$/.test(value)) return true;
-            return 'Please enter a valid color keyword or hexadecimal number.';
-        }
-    }
-];
-
-inquirer.prompt(questions).then(answers => {
-    const { text, textColor, shape, shapeColor } = answers;
-
-    const width = 300;
-    const height = 200;
-    const centerX = width / 2;
-    const centerY = height / 2;
-    const circleRadius = 75;  // Increase the radius to make the circle bigger
-
-    let svgContent = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-        <style>
-            .text { fill: ${textColor}; font-size: 30px; text-anchor: middle; dominant-baseline: middle; }
-        </style>
-    `;
-
-    switch(shape) {
-        case 'circle':
-            svgContent += `<circle cx="${centerX}" cy="${centerY}" r="${circleRadius}" fill="${shapeColor}" />`;
-            svgContent += `<text x="${centerX}" y="${centerY}" class="text">${text}</text>`;
-            break;
-        case 'triangle':
-            svgContent += `<polygon points="${centerX},${centerY - 50} ${centerX - 50},${centerY + 50} ${centerX + 50},${centerY + 50}" fill="${shapeColor}" />`;
-            svgContent += `<text x="${centerX}" y="${centerY + 15}" class="text">${text}</text>`;
-            break;
-        case 'square':
-            svgContent += `<rect x="${centerX - 50}" y="${centerY - 50}" width="100" height="100" fill="${shapeColor}" />`;
-            svgContent += `<text x="${centerX}" y="${centerY}" class="text">${text}</text>`;
-            break;
-    }
-
-    svgContent += `</svg>`;
-
-    fs.writeFile('logo.svg', svgContent, (err) => {
-        if (err) throw err;
-        console.log('Generated logo.svg');
-    });
-});
+```json
+{
+  "name": "02-challenge",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {}
+}
+## Usage For more details, refer to this video https://drive.google.com/file/d/1AdkT4f2UlrUbu-dmrC9eXakPhR067qNU/view ## Features - View and add employees, including their salary and roles. - Organize departments and roles efficiently. - Manage employee data with JSON columns in PostgreSQL. ## Tests Refer to connection.js for testing the database connection and other functionalities. ## Credits [Include any credits or acknowledgments here] d
