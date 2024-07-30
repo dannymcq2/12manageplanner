@@ -24,38 +24,8 @@ MySQL also supports JSON data types natively. Ensure you are using MySQL version
 
 Creating Tables with JSON in PostgreSQL
 
-PostgreSQL supports JSON data types natively. You can create tables with JSON columns and use various functions to work with JSON data. For example
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    data JSONB
-);
-
-INSERT INTO users (data) VALUES ('{"name": "John", "age": 30}');
-
-Package JSON
-
-Creating the Table
-
-First, create a table with a JSONB column:
-
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    data JSONB
-);
-
-Inserting JSON Data
-
-Insert JSON data into the users table:
-
-INSERT INTO users (data) VALUES ('{"name": "John", "age": 30}');
-
-Querying JSON Data
-
-You can query the JSON data using PostgreSQL’s JSON functions and operators. For example, to extract the name from the JSON data:
-
-SELECT data->>'name' AS name FROM users WHERE data->>'age' = '30';
-
-This command retrieves the name field from the JSON data for users where the age is 30.
+PostgreSQL supports JSON data types natively. You can create tables with JSON columns and use various functions to work with JSON data. 
+.
 
 Here is the `package.json` configuration for this project:
 
