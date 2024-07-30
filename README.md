@@ -3,7 +3,7 @@
 Here is the `package.json` configuration for this project:
 
 ```json
-{
+{ 
   "name": "02-challenge",
   "version": "1.0.0",
   "description": "## Your Task",
