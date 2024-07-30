@@ -1,3 +1,4 @@
+# <manageplanner>
 Description
 
 My motivation was to create an organizer or planner to view and add departments, roles, and percentage of employees. I built this for managers of all kinds looking for a robust organizing tool. This project solves the problem of sloppy work and poor organization. Additionally, I learned more about using PostgreSQL during this project.
